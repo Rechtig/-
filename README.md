@@ -1,7 +1,7 @@
 # -写一些关于面试题目
 ### HTML
 **doctype的作用？**</br>
- <!DOCTYPE>位于文档的第一行，告知浏览器的解析器是用什么标准解析这个文档。不存在或者错误的写，则以兼容模式呈现。</br>
+<!DOCTYPE>位于文档的第一行，告知浏览器的解析器是用什么标准解析这个文档。不存在或者错误的写，则以兼容模式呈现。</br>
 
 **行内元素？块状元素？空(void)元素？**</br>
 行内：img a span input select  </br>
@@ -26,7 +26,7 @@ id（#mydiv） 类（.mydiv） 标签(div) 相邻(h1 + p) 子（ul>li）后代(u
 越近越优先(内联>当前文件>外部文件)</br>
 !import>id>class>tag</br>
 
-###JS
+### JS
 **介绍JS的数据类型**</br>
 基本类型：Undefined  Null Boolean String Number</br>
 复杂：Object--细分为 Function Array</br>
