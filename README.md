@@ -44,6 +44,23 @@ localStorage，sessionStorage仅仅存再本地。
 存储大小：cookies <= 4K  localStorage，sessionStorage>5M</br>
 有效时间：cookie在过期时间前一直有效  localStorage很久，除非主动删除 sessionStorage当前浏览器后自动删除</br>
 
+**label的作用市什么？是怎么用的？**</br>
+定义表单控件间的关系。</br>
+label for="Name" Number: /label</br>
+input type="text" name="Name"</br>
+或者 label Date: input type="text" name="AAA" /label</br>
+
+**如何实现多个标签页之间的通信？**</br>
+webSocket ShareWorker;localStorage,sessionStorage</br>
+
+**不使用border画出1px高的线，各浏览器各模式都能保持一致。**</br>
+div{heighe:1px;background-color:red;overflow:hidden} //好像就IE5会出问题</br
+
+**title与h1,b与strong,i与em的区别**</br>
+title没有明确的意义，只是个标题。h1则表明层次的标题。</br>
+同理b i都没有具体的语义化，知识改变样式。strong语气加强，em强调文本。</br>
+
+
 ### CSS
 **CSS选择符有哪些？**
 id（#mydiv） 类（.mydiv） 标签(div) 相邻(h1 + p) 子（ul>li）后代(ul li) 通配符（*) 属性（a[attr=""]） 伪类(a:hover)  </br>
@@ -74,13 +91,31 @@ p:first-of-type  p:only-of-type  :after :before :enable  :disable :checked</br>
 relative:相对于其正常位置进行定位； absolute：相对于值不为static的第一个父元素进行定位；</br>
 fixed：相对于浏览器窗口进行定位；</br> static：没有定位，正常流中； inherit：从父元素继承position属性；</br>
 
+**CSS3有哪些新特性？**</br>
+选择器： ：not(.inp) 所有class不为inp的节点</br>
+圆角：border-radius   阴影box-shadow 文字特效 text-shadow 渐变gradient 动画transform animate</br>
+
+**CSS3的Flexbox(弹性盒布局模型)，以及适用场景？**</br>
+flexbox可以把列表放在同一个方向，上>下 左>右，并让别表能延伸到可占用的空间。复杂的布局可以嵌套flexContainer来实现。</br>
+flex Container中的成员为flex item(项目)。</br>
+常规布局是基于块和内联方向，而flex布局是基于flex-flow流的。</br>
+
+**纯CSS制作一个三角形？**</br>
+.demo{width:0;height:0;border-width:10px;border-style:solid;border-color:transparent transparent red transparent;}</br>
+
+**满屏品字布局？**</br>
+上面div100% 下面2个div50%浮动 不过IE7以下的滚动条会影响。overflow-y：hidden</br>
+
+
+
 ### JS
 **介绍JS的数据类型**</br>
 基本类型：Undefined  Null Boolean String Number</br>
 复杂：Object--细分为 Function Array</br>
 null为对象，但是是空的，参与数值运算自动转为0</br>
 undefined是window的一个特殊属性，未定义参与运算未NaN</br>
-JS有两种数据类型：基本类型&引用类型(保存在内存中的对象)。
+==号无法区分null与undefin，===可以。</br>
+JS有两种数据类型：基本类型&引用类型(保存在内存中的对象)。</br>
 
 **JS原型，原型链有什么特点**</br>
 每个对象都会在内部初始化一个属性---prototype(原型)</br>
@@ -115,6 +150,24 @@ var peroson = new Person('AAA');</br>
 1.总指向函数的直接调用者(非间接)；</br>
 2.如有new关键字，this指向new出来的那个对象；</br>
 3.在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象window。</br>
+
+**什么是window对象，什么是document对象？**</br>
+window对象是指浏览器打开的窗口。</br>
+document对象是 HTML文档对象的一个只读引用，window对象的一个属性。</br>
+
+**什么是闭包？为什么要用它？**</br>
+闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量利用闭包可以突破作用域链域，将函数内部的变量与方法传递到外部。</br>
+闭包的特性：</br>
+1.函数内再嵌套函数</br>
+2.内部函数可以引用外层参数和变量</br>
+3.参数和变量不会被垃圾回收机制回收</br>
+
+**JS中的use strict是什么意思？使用它区别是什么？**</br>
+是ES5添加的(严格)运行模式，使得JS在更严格的条件下运行。</br>
+使JS编码更加规范化，消除JS语法的一些不合理，不严谨之处，减少一些怪异行为。</br>
+默认支持的糟糕特性都会被禁用，不能用with，不能在意外的情况下给全局变量赋值。</br>
+提高编译器效率，增加运行速度。</br>
+
 
 
 
