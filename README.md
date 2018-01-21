@@ -106,6 +106,22 @@ flex Container中的成员为flex item(项目)。</br>
 **满屏品字布局？**</br>
 上面div100% 下面2个div50%浮动 不过IE7以下的滚动条会影响。overflow-y：hidden</br>
 
+**常见的浏览器兼容问题有哪些？怎么解决的？常用的hack技巧？**</br>
+1.浏览器默认的margin padding不同——————* margin：0；padding：0；</br>
+2.chrome中文界面下会将小于12px的文字强制转换为12px------将文字包裹在span内设置为block块使用-webkit-transform：scale（）来缩小。</br>
+3.几个img并排放，有些浏览器会有间距。-------使用float布局</br>
+4.获取元素IE：document.idname或者document.getElementById('idName')其他浏览器也是后者。所以统一用后者。
+
+**li与li之间的空白是什么原因引起的？怎么解决？**</br>
+因为li换行后的空格产生了字符，变成一个空格。</br>
+1：float；(不过焦点图不能设置浮动)2：所有li写在一行（代码不好看）;3:font-size:0(safari依然有)4:ul总letter-spacing=-8px;li中normal;</br>
+
+**为什么要初始化CSS样式?**</br>
+因为浏览器的兼容问题。如果不设置，往往会出现浏览器之间的页面显示差异。</br>
+最好不要用* margin：0; padding:0;用到哪些，写哪些！</br>
+
+
+
 
 
 ### JS
