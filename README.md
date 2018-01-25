@@ -62,8 +62,9 @@ title没有明确的意义，只是个标题。h1则表明层次的标题。</br
 
 
 ### CSS
-**CSS选择符有哪些？**
-id（#mydiv） 类（.mydiv） 标签(div) 相邻(h1 + p) 子（ul>li）后代(ul li) 通配符（*) 属性（a[attr=""]） 伪类(a:hover)  </br>
+**CSS选择符有哪些？权重的定义？**
+id（#mydiv） 类（.mydiv） 标签(div) 相邻(h1 + p) 子（ul>li）后代(ul li) 通配符（*) 属性（a[attr=""]） 伪类(a:hover)  </br>
+id权重100    类权重10     标签权重1  eg .mydiv a{} 权重为10+1=11</br>
 
 **哪些样式可以被继承？**</br>
 可继承：font（一大家） text-indent text-align line-height  color 光标cursor</br>
@@ -119,6 +120,21 @@ flex Container中的成员为flex item(项目)。</br>
 **为什么要初始化CSS样式?**</br>
 因为浏览器的兼容问题。如果不设置，往往会出现浏览器之间的页面显示差异。</br>
 最好不要用* margin：0; padding:0;用到哪些，写哪些！</br>
+
+**为什么要清除浮动？清除浮动的方式？**</br>
+为了清除使用浮动元素产生的影响。浮动的元素，会使父元素高度塌陷，而高度的塌陷使我们页面后面的布局不能正常显示。</br>
+1.给父元素加上height</br>
+2.父元素也使用float</br>
+3.使用伪类</br>
+zoom是IE浏览器的专有属性，它可以设置或检索对象的缩放比例。解决IEixa比较奇葩的bug。</br>
+外边距重叠，清除浮动，触发IE的haslayout
+
+**对BFC(block formatting context)规范的理解？**</br>
+(它是一个独立容器，决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。)</br>
+一个页面是由很多BOX组成的，元素的类型和display属性，决定了这个BOX的类型。</br>
+不同类型的BOX，会参与不同的Formatting Context(决定如何渲染文档的容器)，因此Box内的元素会以不同的方式渲染，</br>
+也就是说BFC内部的元素和外部的元素不会互相影响。</br>
+
 
 
 
@@ -183,6 +199,24 @@ document对象是 HTML文档对象的一个只读引用，window对象的一个�
 使JS编码更加规范化，消除JS语法的一些不合理，不严谨之处，减少一些怪异行为。</br>
 默认支持的糟糕特性都会被禁用，不能用with，不能在意外的情况下给全局变量赋值。</br>
 提高编译器效率，增加运行速度。</br>
+
+**new操作符具体干了什么？**</br>
+1.创建一个空对象，并且this变量引用该对象，同时还继承了该函数的原型。</br>
+2.属性和方法被加入到this引用的对象中。</br>
+3.新创建的对象由this所引用，并且最后隐式的返回this。</br>
+var obj = {}; obj._proto_ = Base.prototype; Base.call(obj);</br>
+
+**JSON的了解？**</br>
+JSON(JavaScript Object Notation)轻量级的数据交换格式。</br>
+基于JS的一个子集。数据格式简单，易于读写，占用带宽小。</br>
+{"age":"12","name":"Jack"}</br>
+
+**DOM操作--添加，移除，移动，复制，创建和查找结点？**</br>
+1.创建createElement() createTextNode()</br> 
+2.添加append Child（）移除removeChild（）replaceChild() insertBefore()</br>
+3.查找getElementsByTagName() getElementByName() getElementById()</br>
+
+
 
 
 
