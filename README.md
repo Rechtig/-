@@ -135,7 +135,18 @@ zoom是IE浏览器的专有属性，它可以设置或检索对象的缩放比�
 不同类型的BOX，会参与不同的Formatting Context(决定如何渲染文档的容器)，因此Box内的元素会以不同的方式渲染，</br>
 也就是说BFC内部的元素和外部的元素不会互相影响。</br>
 
+**margin和padding分别适合什么场景使用？**</br>
+margin是用来隔开元素的间距，padding是用来隔开元素与内容的间距。</br>
+margin使元素之间互不干扰。padding使内容与包裹元素之间有间隔。</br>
 
+**元素竖向的百分比是相对于容器的高度吗?**</br>
+如margin-top margin-bottom padding-top padding-bottom是相对于父容器的高度。</br>
+
+**什么是响应式设计？响应式基本原理是什么？如何兼容低版本的IE？**</br>
+页面的设计和开发应当根据用户行为以及设备环境（系统平台，屏幕尺寸，屏幕定向等）进行相应的相应和调整。</br>
+原理：通过媒体查询检测不同的设备屏幕尺寸做处理。</br>
+meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no”</br>
+兼容方案：。。。</br>
 
 
 
@@ -217,6 +228,20 @@ JSON(JavaScript Object Notation)轻量级的数据交换格式。</br>
 3.查找getElementsByTagName() getElementByName() getElementById()</br>
 
 
+**Ajax是什么？如何创建一个Ajax？**</br>
+异步(向服务器发送请求的时候不必等待，可以做其他事情。)传输+js+xml </br>
+1.创建XMLHTTPRequest对象。</br>
+2.创建一个新的HTTP请求，并指定HTTP请求的方法(send get)，URL及验证信息。</br>
+3.设置相应HTTP请求状态变化的函数。</br>
+4.发送HTTP请求。</br>
+5.获取异步调用返回的数据。</br>
+6.使用JS和DOM实现局部刷新。</br>
+
+**如何解决跨域问题？**</br>
+
+**模块化开发怎么做？**</br>
+立即执行函数，不暴露私有成员。</br>
+var module = （function(){ var m1 = function(){} var m2 = function(){} return m1:m1; m2:m2}）();
 
 
 
